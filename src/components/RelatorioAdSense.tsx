@@ -1,18 +1,18 @@
 
-import React from 'react';
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
+import React from 'react';
 import {
-  BarChart,
   Bar,
-  XAxis,
-  YAxis,
+  BarChart,
   CartesianGrid,
-  Tooltip,
   Legend,
   ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from 'recharts';
-import { ArrowRight, Link } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 /**
  * Componente para exibir as métricas e estatísticas do Google AdSense

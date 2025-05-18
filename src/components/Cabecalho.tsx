@@ -1,7 +1,7 @@
 
+import { Home, Image, ListOrdered, Monitor, User } from 'lucide-react';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, ListOrdered, Monitor, MonitorSmartphone, Image, User } from 'lucide-react';
 
 /**
  * Componente de cabeçalho para navegação no sistema

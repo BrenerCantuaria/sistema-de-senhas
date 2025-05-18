@@ -1,13 +1,13 @@
 
+import { ArrowRight, Image, ListOrdered, User } from 'lucide-react';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ListOrdered, ArrowRight, Image, Monitor, User } from 'lucide-react';
+import BotaoAcao from '../components/BotaoAcao';
 import Cabecalho from '../components/Cabecalho';
 import PainelCards from '../components/PainelCards';
 import TabelaFila from '../components/TabelaFIla';
-import BotaoAcao from '../components/BotaoAcao';
-import useSincronizacaoFila from '../hooks/useSincronizacaoFila';
 import { useFila } from '../context/FilaContexto';
+import useSincronizacaoFila from '../hooks/useSincronizacaoFila';
 
 /**
  * Página principal do painel administrativo

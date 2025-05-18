@@ -1,5 +1,3 @@
-
-import React, { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useEffect, useState } from "react";
 
 /**
  * Componente para simular a prévia da tela pública com os anúncios do usuário
@@ -18,32 +16,32 @@ const PreviewTelaPublica: React.FC = () => {
     {
       id: 1,
       url: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-      citacao: "Seja a melhor versão de si mesmo."
+      citacao: "Seja a melhor versão de si mesmo.",
     },
     {
       id: 2,
       url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      citacao: "Cuidar da saúde é investir no futuro."
+      citacao: "Cuidar da saúde é investir no futuro.",
     },
     {
       id: 3,
       url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      citacao: "Sua saúde é nossa prioridade."
-    }
+      citacao: "Sua saúde é nossa prioridade.",
+    },
   ];
-  
+
   // Estado para controlar o anúncio atual na prévia
   const [anuncioAtual, setAnuncioAtual] = useState(0);
-  
+
   // Simulação de rotação automática dos anúncios
   useEffect(() => {
     const intervalo = setInterval(() => {
       setAnuncioAtual((atual) => (atual + 1) % anuncios.length);
     }, 5000);
-    
+
     return () => clearInterval(intervalo);
   }, [anuncios.length]);
-  
+
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden shadow-lg">
       {/* Barra superior simulando uma tela pública */}
@@ -54,15 +52,15 @@ const PreviewTelaPublica: React.FC = () => {
         </div>
         <div className="text-sm">12:45 • Qua, 17 Mai</div>
       </div>
-      
+
       {/* Prévia do carrossel de anúncios */}
       <div className="aspect-video relative">
         <Carousel className="w-full h-full">
           <CarouselContent>
             {anuncios.map((anuncio) => (
               <CarouselItem key={anuncio.id} className="relative">
-                <img 
-                  src={anuncio.url} 
+                <img
+                  src={anuncio.url}
                   alt={`Anúncio ${anuncio.id}`}
                   className="w-full h-full object-cover"
                 />
@@ -79,7 +77,7 @@ const PreviewTelaPublica: React.FC = () => {
           <CarouselNext />
         </Carousel>
       </div>
-      
+
       {/* Barra inferior simulando os guichês */}
       <div className="grid grid-cols-4 bg-gray-800 text-white">
         <div className="p-3 flex items-center justify-center">
@@ -113,19 +111,22 @@ const PreviewTelaPublica: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Banner informativo no rodapé */}
       <div className="bg-blue-600 text-white p-2">
         <div className="text-center">
           <p className="text-sm">
-            Para agilizar seu atendimento tenha em mãos o pedido médico e um documento com foto
+            Para agilizar seu atendimento tenha em mãos o pedido médico e um
+            documento com foto
           </p>
         </div>
       </div>
-      
+
       {/* Nota informativa sobre a simulação */}
       <div className="bg-yellow-100 text-yellow-800 p-2 text-xs text-center">
-        Esta é apenas uma simulação. A aparência real pode variar conforme o tamanho da tela pública.
+        Esta é apenas uma simulação. A aparência real pode variar conforme o
+        tamanho da tela pública.
+        <p className="invisible">{anuncioAtual}</p>
       </div>
     </div>
   );
